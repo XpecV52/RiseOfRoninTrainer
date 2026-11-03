@@ -1,5 +1,7 @@
 # 浪人崛起 内置 DLL 修改器
 
+**中文** | [English](README_EN.md)
+
 ## 做什么
 
 浪人崛起 内置 dll 修改器，开游戏即激活。
@@ -34,7 +36,3 @@
 3. 改完配置保存，重启游戏生效
 
 卸载：删掉游戏根目录的 `dinput8.dll`。
-
----
-
-English: [README_EN.md](README_EN.md)

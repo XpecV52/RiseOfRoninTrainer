@@ -1,5 +1,7 @@
 # Rise of the Ronin — Built-in DLL Trainer
 
+[中文](README.md) | **English**
+
 ## What it does
 
 Built-in DLL trainer for Rise of the Ronin. Activates automatically when the game starts.
@@ -34,7 +36,3 @@ Notes:
 3. Restart the game after editing the config
 
 Uninstall: delete `dinput8.dll` from the game folder.
-
----
-
-中文: [README.md](README.md)
