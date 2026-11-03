@@ -16,6 +16,7 @@ dll/*.dll
 *.exe
 *.dll
 !release/dinput8.dll
+/dist/
 
 # ---- 逆向分析产物 ----
 *.bin
@@ -23,6 +24,7 @@ dll/*.dll
 *.txt
 *.py
 !dll/build.py
+!package.py
 /out/
 /res/
 /src/
