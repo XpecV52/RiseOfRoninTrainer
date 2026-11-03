@@ -7,14 +7,10 @@ Built-in DLL trainer for Rise of the Ronin. Activates automatically when the gam
 ## Features
 
 1. Infinite items
-2. Longer parry window
-3. Auto parry
-4. All style parry bonus effects
-5. Buff control
-6. Character stats
-7. Ki
-8. Ki (stamina) consumption
-9. Ignore set piece requirement
+2. Auto parry
+3. Buffs never expire
+4. No Ki (stamina) consumption
+5. Ignore set piece requirement
 
 ## Configuration
 
@@ -23,7 +19,7 @@ Built-in DLL trainer for Rise of the Ronin. Activates automatically when the gam
 | Key | Value | Description |
 |---|---|---|
 | `enable_inf_item` | `1` / `0` | Infinite items |
-| `enable_hooks` | `1` / `0` | Master switch for the other 8 features (all or nothing) |
+| `enable_hooks` | `1` / `0` | Master switch for the other 4 features (all or nothing) |
 | `max_hooks` | `0` / `N` | `0` = install all; `N` = install only the first N hooks (crash debugging) |
 
 Notes:
