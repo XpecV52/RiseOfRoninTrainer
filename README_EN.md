@@ -1,33 +1,26 @@
-# Rise of the Ronin — Built-in DLL Trainer
+# Rise of the Ronin — Built-in DLL Trainer (Lite)
 
 [中文](README.md) | **English**
 
 ## What it does
 
-Built-in DLL trainer for Rise of the Ronin. Activates automatically when the game starts.
+Built-in DLL trainer for Rise of the Ronin. Activates automatically when the game starts. This branch keeps only 3 features.
 
 ## Features
 
-1. Infinite items
-2. Auto parry
-3. Buffs never expire
-4. No Ki (stamina) consumption
-5. Ignore set piece requirement
+1. Auto parry
+2. Ignore set piece requirement
+3. Infinite items
 
 ## Configuration
 
-`Ronin_Cheats.ini` has 3 keys:
+`Ronin_Cheats.ini` has 3 keys, each switchable on its own:
 
 | Key | Value | Description |
 |---|---|---|
+| `enable_auto_parry` | `1` / `0` | Auto parry |
+| `enable_no_set_req` | `1` / `0` | Ignore set piece requirement |
 | `enable_inf_item` | `1` / `0` | Infinite items |
-| `enable_hooks` | `1` / `0` | Master switch for the other 4 features (all or nothing) |
-| `max_hooks` | `0` / `N` | `0` = install all; `N` = install only the first N hooks (crash debugging) |
-
-Notes:
-
-- Deleting the `enable_inf_item` or `enable_hooks` line turns that feature off.
-- Do not delete `max_hooks` — without it only one hook is installed and every feature stops working.
 
 ## Usage
 

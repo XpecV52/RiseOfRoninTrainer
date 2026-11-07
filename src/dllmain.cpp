@@ -93,14 +93,18 @@ static int HexVal(char c)
 
 static void InstallHooks(const EngSection* secs, int nsec, EngReport* rep)
 {
-    if (!CfgInt("enable_hooks", 0))
-        return;
-
-    /* 1. 先把所有 hook 点扫出来 */
+    /* 1. 先把要装的 hook 点扫出来（按 INI 开关过滤） */
     uintptr_t sites[64];
     int nsites = 0;
     uintptr_t lo = 0;
     for (int i = 0; i < g_hooks_n && nsites < 64; i++) {
+        /* 该 hook 的功能开关关着就跳过 */
+        if (g_hooks[i].feature && *g_hooks[i].feature &&
+            !CfgInt(g_hooks[i].feature, 1)) {
+            rep->hooks_skip++;
+            sites[nsites++] = 0;
+            continue;
+        }
         int hits = 0;
         uintptr_t a = eng_scan_module(secs, nsec, g_hooks[i].aob, &hits);
         if (!a) { rep->hooks_skip++; sites[nsites++] = 0; continue; }
@@ -136,9 +140,7 @@ static void InstallHooks(const EngSection* secs, int nsec, EngReport* rep)
     }
 
     /* 5. 逐条写跳转 */
-    int maxh = CfgInt("max_hooks", 1);
-    if (maxh <= 0 || maxh > g_hooks_n) maxh = g_hooks_n;
-    for (int i = 0; i < nsites && i < g_hooks_n && i < maxh; i++) {
+    for (int i = 0; i < nsites && i < g_hooks_n; i++) {
         if (!sites[i]) continue;
         uintptr_t to = (uintptr_t)g_cave + g_hooks[i].cave_off;
         if (eng_write_jmp(sites[i], to)) {
