@@ -11,8 +11,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 # (源文件, zip 内文件名)
 FILES = [
-    ("release/dinput8.dll", "dinput8.dll"),
-    ("release/Ronin_Cheats.ini", "Ronin_Cheats.ini"),
+    ("dist/dinput8.dll", "dinput8.dll"),
+    ("dist/Ronin_Cheats.ini", "Ronin_Cheats.ini"),
     ("README.md", "README.md"),
     ("README_EN.md", "README_EN.md"),
 ]
